@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.one,.two,.three{
+			width: 300px;
+			height: 400px;
+			text-align: center;
+			float: left;
+			margin-right: 20px;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+		}
+		.one div{
+			background: linear-gradient(#ff0,#f00);
+		}
+		.two div{
+			background: -webkit-linear-gradient(left,#ff0,#f00);
+			background: 	-moz-linear-gradient(right,#ff0,#f00);
+			background:			-o-linear-gradient(right,#ff0,#f00);
+			background: 		linear-gradient(to right,#ff0,#f00);
+		}
+		.three div{
+			background: -webkit-linear-gradient(left top,#ff0,#f00);
+			background: 	-moz-linear-gradient(right bottom,#ff0,#f00);
+			background:			-o-linear-gradient(right bottom,#ff0,#f00);
+			background: 		linear-gradient(to right bottom,#f00,#ff0);
+		}
+	</style>
+</head>
+<body>
+<div class="one">
+	上下方向渐变
+	<div class="box"></div>
+</div>
+<div class="two">
+	左右方向渐变
+	<div class="box"></div>
+</div>
+<div class="three">
+	对角方向渐变
+	<div class="box"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div{
+			font-size: 14px;
+			font-weight:bold;
+			width: 200px;
+			height: 50px;
+			line-height: 50px;
+			margin: auto;
+			cursor: pointer;
+			text-align: center;
+			background: #abcdef;
+			position: fixed;
+			top: 0;bottom: 0; left: 0; right: 0;
+			transform: rotate(0deg) scale(1);
+			/*不设置过渡时间duration，没有过渡效果，直接过渡完成后的样子。过渡属性不写，默认为所有属性*/
+			/*transition-duration: 2s;*/
+			-webkit-transition:transform 1s ease-in-out 0s;
+			-moz-transition:transform 1s ease-in-out 0s;
+			-ms-transition:transform 1s ease-in-out 0s;
+			-o-transition:transform 1s ease-in-out 0s;
+			transition:transform 1s ease-in-out 0s;
+		}
+		div:hover{
+			transform: rotate(360deg) scale(2);
+			/*transition:transform 1s ease-in-out 0s;*/
+		}
+	</style>
+</head>
+<body>
+<div>傻boy小阔爱！☺☺☺</div>
+</body>
+</html>

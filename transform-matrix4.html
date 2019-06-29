@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.matrix_Box{
+			width: 200px;
+			height: 200px;
+			background: #a0b3d6;
+			text-align: center;
+			line-height: 200px;
+		}
+	</style>
+</head>
+<body>
+<p id="matrixDetail">目前属性值为：matrix(1,0,0,1,0,0)</p>
+<p>请输入角度(0~360): <input type="text" id="matrixVal" min='0' max="360" value="0"/></p>
+<div id="matrixBox" class="matrix_Box">☝☝☝☝</div>
+<script type="text/javascript">
+	window.onload=function(){
+		var getEle=function(element){
+			return document.querySelector(element);
+		};
+		var cssTransform=function(valBox,transformVal){
+			var arrPeric=['O','Webkit','Moz','Ms'],
+				length=arrPeric.length;
+			for(var i=0;i<length;i++){
+				valBox.style[arrPeric[i]+'Transform']=transformVal;
+			}
+			
+				};
+		var valDetail=getEle('#matrixDetail'),val=getEle('#matrixVal'),valBox=getEle('#matrixBox');
+		if(valDetail&&val&&valBox){
+			val.addEventListener('change',function(){
+				var minVal=this.getAttribute('min'),
+					maxVal=this.getAttribute('max'),
+					value=this.value;
+				if(Number(value)<minVal){
+					value=minVal;
+					this.value=minVal;
+				}
+				if(Number(value)>maxVal){
+					value=maxVal;
+					this.value=maxVal;
+				}
+				var cosVal=Math.cos(value*Math.PI/180).toFixed(3),
+					sinVal=Math.sin(value*Math.PI/180).toFixed(3);
+				var transformVal="matrix("+cosVal+","+sinVal+","+(-1*sinVal)+","+cosVal+',0,0)';
+				valDetail.innerHTML="目前属性值为："+transformVal;
+				 cssTransform(valBox,transformVal);
+			});
+		}
+	}
+</script>
+</body>
+</html>

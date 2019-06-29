@@ -1,0 +1,71 @@
+*{padding: 0; margin: 0;}
+html,body{height: 100%;}
+.box{
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(rgba(196,228,253),rgba(255,255,255,0)70%,rgba(148,190,89)100%);
+}
+.sky{
+	width: 100%;
+	height: 60%;
+}
+.glass{
+	width: 100%;
+	height: 40%;
+}
+.sky .cloud{
+	width: 62px;
+	height: 62px;
+	border-radius: 50%;
+	background: #fff;
+	position: relative;
+	box-shadow: 0 0 10px #fff;
+}
+.sky .cloud:before{
+	content:'';
+	display: block;
+	position: absolute;
+	width: 113px;
+	height: 35px;
+	background: #fff;
+	border-radius: 20px;
+	top: 23px;
+	right: -8px;
+	box-shadow: 0 0 10px #fff;
+}
+.sky .cloud:after{
+	content:'';
+	display: block;
+	position: absolute;
+	background: #fff;
+	width: 55px;
+	height: 45px;
+	border-radius: 40px;
+	transform: rotate(50deg);
+	top: 14px;
+	left: -30px;
+	box-shadow: 0 0 10px #fff;
+}
+.content{
+	width: 600px;
+	height: 200px;
+	/*border: 1px red solid;*/
+	position: absolute;
+	right: 30px;
+
+}
+.one{
+	transform: translate(100px,10px) scale(.6);
+}
+.two{
+	transform: translate(220px,-10px) scale(.9);
+}
+.three{
+	transform: translate(140px,-30px) scale(.6);
+}
+.four{
+	transform: translate(320px,-100px) scale(.5);
+}
+.five{
+	transform: translate(450px,-250px) scale(.8);
+}

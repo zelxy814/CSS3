@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>五星红旗</title>
+
+    <style type="text/css">
+
+        .main{
+
+        	width:400px;
+
+        	height:250px;
+
+        	background-color:red;
+
+        	/*position:relative;*/
+
+        }
+
+        .div1{width:0px;height:0px;
+
+
+
+        	border-bottom:80px solid yellow;
+
+        	border-left:30px solid transparent;
+
+        	border-right:30px solid transparent;
+
+        	border-top:none;
+
+        	position:relative;
+
+        }
+
+        .div1::before{
+
+        	content:"";
+
+        	width:0;
+
+        	height:0;
+
+        	border-bottom:70px solid blue;
+
+        	border-left:100px solid transparent;
+
+        	border-right:100px solid transparent;
+
+        	border-top:none;
+
+        	position:absolute;
+
+        	top:65px;
+
+        	left:-100px;
+
+            transform:rotate(-35deg);
+
+        }
+
+        .div1::after{
+
+        	content:"";
+
+        	width:0;
+
+        	height:0;
+
+        	border-bottom:70px solid green;
+
+        	border-left:100px solid transparent;
+
+        	border-right:100px solid transparent;
+
+        	border-top:none;
+
+        	position:absolute;
+
+        	top:65px;
+
+        	left:-100px;
+
+            transform:rotate(35deg);
+
+        }
+
+        .divs1{
+
+        	transform: translate(50px,8px) scale(0.4);
+
+        }
+
+        .divs2{
+
+        	transform:translate(130px,-100px) scale(0.2) rotate(20deg);
+
+        }
+
+         .divs3{
+
+        	transform:translate(150px,-140px) scale(0.2) rotate(-20deg);
+
+        }
+
+        .divs4{
+
+        	transform:translate(160px,-170px) scale(0.2) rotate(20deg);
+
+        }
+
+         .divs5{
+
+        	transform:translate(130px,-210px) scale(0.2) rotate(20deg);
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="main">
+
+    	<div class="div1 divs1"></div>
+
+    	<div class="div1 divs2"></div>
+
+    	<div class="div1 divs3"></div>
+
+    	<div class="div1 divs4"></div>
+
+    	<div class="div1 divs5"></div>
+
+    </div>
+
+</body>
+
+</html>

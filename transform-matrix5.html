@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.matrix_line{
+			width: 150px;
+			height: 2px;
+			background-color: rgba(0,0,0,0.6);
+			position: absolute;
+			left: 100px;
+			top: 170px;
+			z-index: 1;
+			-webkit-transform-origin: top left;
+			-moz-transform-origin: top left;
+			-o-transform-origin: top left;
+			transform: top left;
+		}
+		.matrix_line:before{
+			content: "";
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background-color: #fff;
+			opacity: 0.75;
+			position: absolute;
+			left: -2px;
+			top: -2px;
+		}
+		.matrix_line:after{
+			content: '';
+			width: 8px;
+			height: 8px;
+			border-radius: 8px;
+			background-color: rgba(0,255,255,.5);
+			position: absolute;
+			top: -4px;
+			right: -4px;
+			cursor: move;
+		}
+	</style>
+</head>
+<body>
+<p id="matrixDetail">目前属性值为：matrix(1,0,0,1,0,0)</p>
+<div class="martrix_image">
+	<div id="matrixLine" class="matrix_line">↑</div>
+	<input type="text" id="matrixInput" class="matrix_input" autocomplete="off" placeholder="输入角度确认镜像对称轴">
+	<div id="matrixImage" style="background:#a0b3d6;height:200px;width:200px;text-align:center;font-size: 20px">傻↑←↓→☝☝☝☝</div>
+	<!-- <img src="./image/bg1.jpg" id="matrixImage" width="256" height="191"> -->
+</div>
+<script type="text/javascript">
+	window.onload=function(){
+		var getEle=function(element){
+			return document.querySelector(element);
+		};
+		var cssTransform=function(element,value){
+			//arrPeric=['O','Webkit','Moz','Ms',""]
+			//element.style[arrPeric[i]+'Transform']=value;
+			var arrPeric=['-o-','-webkit-','-moz-','-ms-',""],
+				length=arrPeric.length;
+			for(var i=0; i<length; i++){
+				element.style[arrPeric[i]+'transform']=value;
+			}
+		};
+		var eleDetail=getEle('#matrixDetail'),eleInput=getEle('#matrixInput'),
+			eleLine=getEle('#matrixLine'),eleImage=getEle('#matrixImage');
+
+		if(eleDetail&&eleInput&&eleLine&&eleImage){
+			eleInput.addEventListener('change',function(){
+				var value = parseInt(this.value,10);
+				if(value){
+					cssTransform(eleLine,"rotate("+value+"deg)");
+					var k=Math.tan(-1*value*Math.PI/180),
+						ux=1/Math.sqrt(1+k*k),uy=k/Math.sqrt(1+k*k);
+						if(k>1000000){
+							ux=0,uy=1;
+						}
+						else if(k<-1000000){
+							ux=0,uy=-1;
+						}
+						var valTransform="matrix("+(2*ux*ux-1).toFixed(6)+","+(2*ux*uy).toFixed(6)+","+(2*ux*uy).toFixed(6)+","+(1-2*ux*ux).toFixed(6)+",0,0)";
+						eleDetail.innerHTML="目前属性值为："+valTransform;
+						cssTransform(eleImage,valTransform);
+				}else{
+					this.value="0";
+				}
+			});
+		}
+	}
+</script>
+</body>
+</html>

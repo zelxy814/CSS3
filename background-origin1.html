@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>background-origin</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		div {
+			width: 400px;
+			height: 300px;
+			border: 50px solid rgba(0,0,255,.3);
+			padding: 50px;
+			background: url('http://climg.mukewang.com/582c342b0001fd6507000210.jpg') 50px 100px no-repeat;
+			background-size: 100% 100%;
+			background-origin: border-box;
+			background-origin: padding-box;
+			background-origin: content-box;
+		}
+		span{
+			float: left;
+			position: absolute;
+			width: 400px;
+			height: 300px;
+			padding: 50px;
+		}
+		.one{
+			top: 0;
+			left:0;
+			border: 50px solid rgba(0,0,255,.3);
+		}
+		.two{
+			top: 50px;
+			left: 50px;
+			border: 50px solid rgba(0,255,0,.3);
+		}
+	</style>
+</head>
+<body>
+<div></div>
+<span class="one"></span>
+<span class="two"></span>
+</body>
+</html>

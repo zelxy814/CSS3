@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	div{
+		width:200px;
+		height: 200px;
+		background: #0ff;
+		margin-bottom: 30px;
+	}
+	#pin{
+		/*width:50px;
+		height: 50px;*/
+		position: relative;
+		left:75px;
+		top: 75px;
+	}
+	
+	</style>
+</head>
+<body>
+<div id="pingyi"></div>
+<button id="btn1">点击应用matrix(1,0,0,1,30,30)</button>
+<div id="ping"></div>
+<button id="btn2">点击应用translate(30px,30px)</button>
+<div id="pin">
+	
+</div>
+<button id="btn3">(30px,30px)</button>
+<script type="text/javascript">
+	var getId=function(id){
+		return document.getElementById(id);
+	};
+	var btn1 = getId('btn1'),
+		pingy = getId('pingyi'),
+		btn2 = getId('btn2')
+		ping = getId('ping'),
+		pin = getId('pin'),
+		btn3 = getId('btn3');
+
+	btn1.onclick=function(){
+		pingyi.style.transform='matrix(1,0,0,1,30,30)';
+	}
+	btn2.onclick=function(){
+		ping.style.transform="translate(30px,30px)";
+	}
+
+</script>
+</body>
+</html>

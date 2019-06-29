@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{overflow: hidden;}
+		div	{
+			position: absolute;
+			width: 400px;
+			height: 400px;
+			top: 0;left: 0;right:0;bottom: 0;
+			margin: auto;
+			border: 2px solid #000;
+			box-sizing: border-box;
+			border-bottom: 200px solid #000;
+			border-radius: 50%;
+			transform-origin: 50% 50%;
+			animation-name: rotate;
+			animation-duration: 5s;
+			-webkit-animation-timing-function: linear;
+			-webkit-animation-duration: 5s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+
+		}
+		div:before{
+			content:'';
+			display:block;
+			position: absolute;
+			left: -1px;
+			top: 100px;
+			width:200px;
+			height: 200px;
+			box-sizing: border-box;
+			border: 80px solid #000;
+			border-radius: 50%;
+			background: #fff;
+			
+		}
+		div:after{
+			content:'';
+			display:block;
+			position: absolute;
+			right: -1px;
+			top: 100px;
+			width:200px;
+			height: 200px;
+			box-sizing: border-box;
+			border: 80px solid #fff;
+			border-radius: 50%;
+			background: #000;
+			
+		}
+
+		@keyframes rotate{
+			from{transform: rotate(0deg);}
+			to{transform: rotate(360deg);}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

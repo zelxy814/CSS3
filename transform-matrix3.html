@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.matrix_Box{
+			width: 150px;
+			height: 150px;
+			line-height: 130px;
+			background-color: #a0b3d6;
+			font-size: 60px;
+			text-align:center;
+			text-shadow: 1px 1px #fff;
+		}
+	</style>
+</head>
+<body>
+<p id="matrixDetail">目前属性值为：matrix(1,0,0,1,0,0)</p>
+<p>请输入角度(0~360)：<input type="text" id="matrixRotate" value="0" min="0" max="360" autocomplete="off"></p>
+<div id="matrixBox" class="matrix_Box">↑</div>
+<script type="text/javascript">
+	window.onload=function(){
+		var getEle=function(selector){
+			return document.querySelector(selector);
+		};
+		var css3Transform=function(element,value){
+			
+		var arrPriex=['-o-','-ms-','-moz-','-webkit-',""],length=arrPriex.length;
+			for(var i=0; i<length; i++){
+				element.style[arrPriex[i]+'transform']=value;
+			}
+		};
+		var eleDetail=getEle('#matrixDetail'),eleRotate=getEle('#matrixRotate'),eleBox=getEle('#matrixBox');
+		if(eleDetail&&eleRotate&&eleBox){
+			eleRotate.addEventListener('change',function(){
+				var maxVal=this.getAttribute('max'),minVal=this.getAttribute('min'),value=this.value;
+				if(Number(value)<Number(minVal)){
+					value=minVal;
+					this.value=minVal;
+					
+				};
+				if(Number(value)>Number(maxVal)){
+					console.log(value);
+					value=maxVal;
+					console.log(value);
+					this.value=maxVal;
+
+					console.log(maxVal);
+
+				};
+
+				  // if ('60'<'0') {
+      //      		 	console.log(123);
+      //    			}
+      //    		if ('60'>'360') { 字符串之间的比较
+      //       		console.log(456);
+      //    			}
+
+				var cosVal=Math.cos(this.value*Math.PI/180),
+					sinVal=Math.sin(this.value*Math.PI/180);
+				var valTransform='matrix('+cosVal.toFixed(6)+','+sinVal.toFixed(6)+','+(-1*sinVal).toFixed(6)+','+cosVal.toFixed(6)+',0,0)';
+				eleDetail.innerHTML="目前属性值为："+valTransform;
+				css3Transform(eleBox,valTransform);
+				// eleBox.style['transform']=valTransform;
+				//eleBox.style.transform=valTransform;
+			});
+		}
+	};
+</script>
+</body>
+</html>

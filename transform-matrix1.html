@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{
+		font-size:14px;
+		
+		color:#333;
+	}
+	.part{
+		width:600px;
+		margin: 0 auto;
+		position: relative;
+	}
+		.matrix_i,.matrix_j{
+			position: absolute;
+			width: 5px;
+			height: 5px;
+			/*overflow: hidden;*/
+		}
+		.matrix_i{
+			background-color: green;
+			z-index: 1;
+		}
+		.matrix_j{
+			background-color:red;
+			/*-webkit-transition: all 1s ease-in-out;
+			-moz-transition: all 1s ease-in-out;
+			-o-transition: all 1s ease-in-out;
+			-ms-transition: all 1s ease-in-out;
+			transition: all 1s ease-in-out;*/
+		}
+		.p_button{
+			margin-top: 200px;
+		}
+	</style>
+</head>
+<body>
+<div class="part" id="code"></div>
+<div class="part" id="effect">
+	<h3>效果：</h3>
+	<div class="show">
+		<div class="demo">
+			<p id="matrixCalc"></p>
+			<div class="matrix_box" id="matrixBox"></div>
+			<p class="p_button">
+				<button id="matrixButton" type="button">开始分解演示</button>
+				<input type="checkbox" id="matrixChk" checked="checked" autocomplete="off" />
+				<label for="matrixChk">自动演示</label>
+			</p>
+		</div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript" src="../../JS/jquery.js"></script>
+<script type="text/javascript">
+
+	/*3*/
+	(function(){
+		var $ =function(selector){
+			return document.querySelector(selector);
+		};
+		var htmlMatrixI="",
+			eleMatrixBox=$('#matrixBox'),eleMatrixCalc=$('#matrixCalc'),
+			eleMatrixBtn=$('#matrixButton');
+		if(eleMatrixBox&&eleMatrixCalc&&eleMatrixBtn){
+			for(var x=-75;x<75;x+=5){
+			for(var y=-75;y<75;y+=5){
+				htmlMatrixI=htmlMatrixI+'<i clsss="matrix_i" style="left:'+x+'px;top:'+y+'px;"></i><b class="matrix_j" style="left:'+x+'px;top:'+y+'px;"</b>';
+			}
+		}
+		eleMatrixBox.innerHTML=htmlMatrixI;
+		var eleMatrixIs=eleMatrixBox.getElementsByTagName('i'),
+			eleMatrixBs=eleMatrixBox.getElementsByTagName('b'),
+			index=0,isText=true,timer="undefined";
+		var funStepMove=function(){
+			if(eleMatrixIs[index]){
+				var left=eleMatrixIs[index].style.left.replace(/[a-z]+/,""),
+					top=eleMatrixIs[index].style.top.replace(/[a-z]+/,""),
+					posL=Number(left)+30,posT=Number(top)+30;
+
+				var textButton="";
+				if(isText){
+					eleMatrixCalc.innerHTML="现在是第"+(index+1)+"块，坐标是("+left+","+top+").于是有:<br />x'=x+30="+left+"+30="+posL+";<br />y'=y+30="+top+"+30="+posT+";";
+					textButton='移动演示';
+					isText=false;
+				}else{
+					eleMatrixIs[index].style.display="none";
+					eleMatrixBs[index].style.zIndex=2;
+					eleMatrixBs[index].style.left=posL+'px';
+					eleMatrixBs[index].style.top=posT+'px';
+					textButton="描述演示";
+					isText=true;
+					index++;
+				}
+				if(timer){
+					textButton="分解演示中...";
+					timer=setTimeout(funStepMove,1);
+				}
+				eleMatrixBtn.innerHTML=textButton;
+			}
+		};
+		eleMatrixBtn.addEventListener('click',function(){
+			if(!timer||timer==="undefined"){
+				funStepMove();
+			}
+		});
+		$('#matrixChk').addEventListener('click',function(){
+			if(this.checked){
+				timer=true;
+				funStepMove();
+			}else{
+				if(timer&&timer!==true){
+					clearTimeout(timer);
+				}
+				timer=false;
+				eleMatrixBtn.innerHTML="开始分解演示";
+			}
+		});
+		}
+
+	})();
+
+
+	
+</script>
+</body>
+</html>

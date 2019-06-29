@@ -1,0 +1,11 @@
+body{background: #f2f4f6;}
+.flex-container{
+	background: purple;
+	/*width: 100%;*/
+	padding: 20px;
+}
+.flex-item{
+	color: purple;
+	width: 100px;
+	/*margin: auto;*/
+}

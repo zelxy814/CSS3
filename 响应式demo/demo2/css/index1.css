@@ -1,0 +1,218 @@
+
+@media screen and (min-width: 760px){
+	.header_top{
+	opacity: 1;
+	width: 100%;
+	height: .8rem;
+	font-size: 18px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: 0;
+	}
+	.header_top .top{
+		padding: 0 .25rem;
+		color: #757575;
+		cursor: pointer;
+	}
+	.header_top .top:nth-child(1) a{
+		color: #afafaf;
+	}
+	.imooc{
+		opacity: 0;
+	}
+
+}
+
+/*重复部分*/
+*{padding: 0;margin: 0}
+a{
+	text-decoration: none;
+	color: #545454;
+}
+body{font-size: 12px;font-family:'宋体';}
+.box{
+	width: 7.68rem;
+	margin: 0 auto;
+	box-shadow: 0 0 1px #f0f0f0;
+}
+/*header*/
+/*第一区域*/
+header{
+	width: 7.68rem;
+	height: 5.5rem;
+	background-color: #B2C5CC;
+	position: relative;
+}
+.header_top{
+	width: 100%;
+	height: .8rem;
+	font-size: 18px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: 0;
+	}
+.header_center{
+	width: 1.3rem;
+	text-align: center;
+	margin: .6rem auto;
+}
+.header_center img{
+	width: 90%;
+}
+.header_center span{
+	display: block;
+	color: #fff;
+	font-size: .2rem;
+	margin: .25rem 0 .5rem 0;
+}
+.header_center div{
+	width: 1.3rem;
+	height: .35rem;
+	line-height: .35rem;
+	background: #fff;
+	text-align: center;
+	box-shadow: 0 0 1px #f2f4f6;
+}
+/*nav*/
+/*第二区域*/
+nav{
+	width: 7.68rem;
+	height: .6rem;
+	color: #bababa;
+	display: flex;
+	align-items: center;
+	border-bottom: 2px solid #f0f0f0;
+}
+nav div{
+	flex:1;
+	text-align: center;
+}
+nav div:first-child{
+	color: #545454;
+}
+/*section*/
+section{
+	width: 7.68rem;
+}
+/*第三区域*/
+article{
+	width: 100%;
+	height: 4.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items:center;
+}
+article p{
+	width: 60%;
+	line-height: 20px;
+	font-size: .15rem;
+	margin-top: .2rem;
+	color: #999;
+}
+/*第四区域*/
+.four{
+	width: 100%;
+	height: .5rem;
+	background: #f0f0f0;
+	color: #545454;
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+	box-sizing: border-box;
+	padding:0 .4rem;
+}
+/*第五区域*/
+.five{
+	width: 100%;
+	height: 4.2rem;
+	padding: 0 .1rem;
+	box-sizing:border-box;
+	/*不知为何背景图片无效*/
+	background: url(image/bg.jpg) no-repeat;
+	background-size: 100%;
+}
+.five .title{
+	margin: .3rem 0 .1rem .1rem;
+}
+.image{
+	width: 100%;
+	height: 3.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	box-sizing:border-box;
+}
+.image img{
+	width: 30%;
+	height: 1.5rem;
+}
+/*footer*/
+footer{
+	width: 100%;
+	height: .5rem;
+	background: #999;
+	text-align: center;
+	line-height:.5rem;
+	font-size: .18rem;
+}
+
+@media screen and (max-width: 760px){
+	.header_top .tops{
+		opacity: 0; 
+		position: absolute;
+		/* width: 100%;
+		height: 2.5rem;
+		background: #7EA6B1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		position:absolute;
+		left:0; */
+	}
+	.top{
+		width: 100%;
+		height: .5rem;
+		line-height: .5rem;
+		border-bottom: 1px solid rgba(255,255,255,.4);
+		box-sizing: border-box;
+		background: #7EA6B1;
+		transition: all 2s;
+	}
+	.imooc{
+		opacity: 1;
+		background: #7EA6B1;
+		line-height: 1rem;
+		font-size: .4rem;
+		width: 100%;
+		height: .8rem;
+		position: absolute;
+		top: 0;
+	}
+	.imooc a:first-child{
+		display: block;
+		height: 1rem;
+		position: absolute;
+		left: 45%;
+		top: 0;
+		color: rgba(255,255,255,.7);
+		font-weight: bold;
+	}
+	.imooc a:last-child{
+		color: rgba(255,255,255,.7);
+		position: absolute;
+		right: .3rem;
+		top:0;
+		cursor: pointer;
+	}
+}

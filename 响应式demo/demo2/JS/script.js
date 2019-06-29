@@ -12,6 +12,7 @@
 		if(clientWidth >= 768){
 			docE1.style.fontSize = '100px';
 		}else{
+			$(".imooc_top").slideUp(0.1);
 			docE1.style.fontSize = (clientWidth/7.68) + 'px'
 			
 		}
@@ -24,16 +25,9 @@
 
 
 $(document).ready(function(){
-	var btn = $('.imooc a').eq(1),
+	var btn = $('.i_imooc a').eq(1),
 	top = $('.header_top');
 	btn.on('click',function(){
-		if(top.css('display')==='none'){
-			top.css({'display':'block'});
-			
-		}
-		else{
-			top.css({'display':'none'});
-		}
-		
+		$(".imooc_top").slideToggle("slow");
 	});
 });

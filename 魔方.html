@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		.box{
+			width: 210px;
+			height: 210px;
+			margin:100px auto;
+			position: relative;
+			transform-style: preserve-3d;
+			perspective: 3000px;
+			/*transition-property: transform;
+			transition-duration: 2s;*/
+			animation-name: rotate;
+			animation-duration: 4s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			animation-timing-function: linear;
+		}
+		.box>div{
+			width: 210px;
+			height: 210px;
+			display: flex;
+			flex-wrap: wrap;
+			margin: auto;
+			position: absolute;
+		}
+		.box>div>div{
+			width: 60px;
+			height: 60px;
+			margin: 5px;
+			border-radius: 5px;
+			text-align: center;
+			line-height: 60px;
+		}
+		.box>div:nth-child(1){
+			transform: translateZ(105px);
+		}
+		.box>div:nth-child(1)>div{
+			background: orange;
+		}
+		.box>div:nth-child(2){
+			transform: translateZ(-105px) rotateY(180deg);
+		}
+		.box>div:nth-child(2)>div{
+			background: green;
+		}
+		.box>div:nth-child(3){
+			transform: rotateY(-90deg) translateZ(105px);
+		}
+		.box>div:nth-child(3)>div{
+			background: lightgreen;
+		}
+		.box>div:nth-child(4){
+			transform: rotateY(90deg) translateZ(105px);
+		}
+		.box>div:nth-child(4)>div{
+			background: blue;
+		}
+		.box>div:nth-child(5){
+			transform: rotateX(90deg) translateZ(105px);
+		}
+		.box>div:nth-child(5)>div{
+			background: red;
+		}
+		.box>div:nth-child(6){
+			transform: rotateX(-90deg) translateZ(105px);
+		}
+		.box>div:nth-child(6)>div{
+			background: yellow;
+		}
+		/*.box:hover{
+			transform: rotateX(360deg) rotateY(360deg);
+		}*/
+		@keyframes rotate{
+			form{
+				transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+			}
+			to{
+				transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="one">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+		</div>
+		<div class="two">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+		</div>
+		<div class="three">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+		</div>
+		<div class="four">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+		</div>
+		<div class="five">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+		</div>
+		<div class="six">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -31,3 +31,4 @@ $(document).ready(function(){
 		$(".imooc_top").slideToggle("slow");
 	});
 });
+

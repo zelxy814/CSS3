@@ -13,12 +13,12 @@
 	position: relative;
 	top: 0;
 	}
-	.header_top .top{
+	.header_top .h_top{
 		padding: 0 .25rem;
 		color: #757575;
 		cursor: pointer;
 	}
-	.header_top .top:nth-child(1) a{
+	.header_top .h_top:nth-child(1) a{
 		color: #afafaf;
 	}
 	.imooc{
@@ -213,7 +213,7 @@ footer{
 		font-size: 20px;
 		top: .8rem;
 	}
-	.imooc_top .i_Top{
+	.imooc_top .i_top{
 		text-align: center;
 		flex: 1;
 		width: 100%;

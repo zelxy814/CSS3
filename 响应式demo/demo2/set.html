@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// set类似于数组，里不能有重复的
+	var set = new Set(['a','b','c','a']);
+	console.log(set);
+	// 添加
+	set.add('d');
+	console.log(set);
+	// 删除
+	set.delete('a');
+	console.log(set);
+	// 判断有没有
+	console.log(set.has('a'));
+	// 长度
+	console.log(set.size);
+
+	for(var item of set){
+		console.log(item);
+	}
+
+	
+</script>
+</html>
